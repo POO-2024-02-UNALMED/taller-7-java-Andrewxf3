@@ -1,34 +1,21 @@
 package comunicacion;
 
-public class Fabula extends Escrito {
-    private String ensenanza;
-    private String tipo;
+import java.util.List;
 
-    public Fabula(String origen, String titulo, String autor, int paginas, String ensenanza) {
-        super(origen, titulo, autor, paginas);
-        this.ensenanza = ensenanza;
+public class Alfabeto extends Pictograma {
+    private List<String> letras;
+
+    public Alfabeto(String origen, String[] letras) {
+        super(origen);
+        this.letras = List.of(letras);
     }
 
-    public Fabula(String origen, String titulo, String autor, int paginas, String ensenanza, String tipo) {
-        super(origen, titulo, autor, paginas);
-        this.ensenanza = ensenanza;
-        this.tipo = tipo;
+    public List<String> getLetras() {
+        return letras;
     }
 
-    public String getEnsenanza() {
-        return ensenanza;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public void setEnsenanza(String ensenanza) {
-        this.ensenanza = ensenanza;
+    public void setLetras(String[] letras) {
+        this.letras = List.of(letras);
     }
 
     @Override
@@ -36,13 +23,12 @@ public class Fabula extends Escrito {
         return getOrigen();
     }
 
-    @Override
-    public int palabrasTotales(int palabrasPagina) {
-        return getPaginas() * palabrasPagina;
+    public int cantidadLetras() {
+        return letras.size();
     }
 
     @Override
     public String toString() {
-        return getTitulo() + "\n" + getAutor() + "\n" + getPaginas() + "\n" + ensenanza;
+        return String.join(", ", letras);
     }
 }
