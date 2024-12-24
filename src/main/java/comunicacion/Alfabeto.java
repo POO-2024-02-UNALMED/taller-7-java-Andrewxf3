@@ -5,9 +5,9 @@ import java.util.List;
 public class Alfabeto extends Pictograma {
     private List<String> letras;
 
-    public Alfabeto(String origen, List<String> letras) {
+    public Alfabeto(String origen, String[] letras) {
         super(origen);
-        this.letras = letras;
+        this.letras = List.of(letras);
     }
 
     public List<String> getLetras() {
