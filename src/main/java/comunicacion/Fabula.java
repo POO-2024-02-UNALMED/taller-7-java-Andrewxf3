@@ -20,7 +20,7 @@ public class Fabula extends Escrito {
     }
 
     public String getTipo() {
-        return Tipo;
+        return tipo;
     }
 
     public void setTipo(String tipo) {
