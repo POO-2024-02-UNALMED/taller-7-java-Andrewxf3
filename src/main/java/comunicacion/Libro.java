@@ -4,7 +4,7 @@ public class Libro extends Escrito {
     private String co_autor;
     private String editorial;
     private String edicion;
-    private string tipo;
+    private String tipo;
 
     public Libro(String origen, String titulo, String autor, int paginas, String co_autor, String editorial, String edicion, String tipo) {
         super(origen, titulo, autor, paginas);
