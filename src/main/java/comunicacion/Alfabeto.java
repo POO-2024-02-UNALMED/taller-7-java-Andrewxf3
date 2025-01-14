@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Alfabeto extends Pictograma {
     private List<String> letras;
-    private String interpretacion;
+    public String interpretacion;
 
     public Alfabeto(String origen, List<String> letras, String interpretacion) {
         super(origen);
