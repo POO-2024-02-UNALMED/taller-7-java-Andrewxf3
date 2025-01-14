@@ -1,39 +1,45 @@
 package comunicacion;
 
+import java.util.List;
+
 public class Fabula extends Escrito {
-    private String ensenanza;
+    private String enseñanza;
     private String interpretacion;
 
-    public Fabula(String origen, String titulo, String autor, int paginas, String ensenanza, String interpretacion) {
+    public Fabula(String origen, String titulo, String autor, int paginas, String enseñanza, String interpretacion) {
         super(origen, titulo, autor, paginas);
-        this.ensenanza = ensenanza;
+        this.enseñanza = enseñanza;
         this.interpretacion = interpretacion;
     }
 
-    public String getEnsenanza() {
-        return ensenanza;
+    public String getEnseñanza() {
+        return enseñanza;
     }
 
-    public void setEnsenanza(String ensenanza) {
-        this.ensenanza = ensenanza;
+    public void setEnseñanza(String enseñanza) {
+        this.enseñanza = enseñanza;
     }
 
-    @Override
-    public String interpretacion() {
-        return this.interpretacion;
+    public String getInterpretacion() {
+        return interpretacion;
+    }
+
+    public void setInterpretacion(String interpretacion) {
+        this.interpretacion = interpretacion;
     }
 
     @Override
     public int palabrasTotales(int palabrasPagina) {
-        return palabrasPagina * this.getPaginas();
+        return palabrasPagina * getPaginas();
+    }
+
+    @Override
+    public String interpretacion() {
+        return interpretacion;
     }
 
     @Override
     public String toString() {
-        return this.getOrigen() + "\n" +
-               this.getTitulo() + "\n" +
-               this.getAutor() + "\n" +
-               this.getPaginas() + "\n" +
-               this.ensenanza;
+        return getOrigen() + "\n" + getTitulo() + "\n" + getAutor() + "\n" + getPaginas() + "\n" + enseñanza;
     }
 }

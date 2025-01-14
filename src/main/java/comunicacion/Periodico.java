@@ -1,6 +1,4 @@
-package comunicacion;
-
-public class Periodico extends Escrito {
+class Periodico extends Escrito {
     private String fecha;
     private String primicia;
     private String interpretacion;
@@ -28,23 +26,26 @@ public class Periodico extends Escrito {
         this.primicia = primicia;
     }
 
-    @Override
-    public String interpretacion() {
-        return this.interpretacion;
+    public String getInterpretacion() {
+        return interpretacion;
+    }
+
+    public void setInterpretacion(String interpretacion) {
+        this.interpretacion = interpretacion;
     }
 
     @Override
     public int palabrasTotales(int palabrasPagina) {
-        return palabrasPagina * this.getPaginas() * 10;
+        return palabrasPagina * getPaginas() * 10;
+    }
+
+    @Override
+    public String interpretacion() {
+        return interpretacion;
     }
 
     @Override
     public String toString() {
-        return this.getOrigen() + "\n" +
-               this.getTitulo() + "\n" +
-               this.getAutor() + "\n" +
-               this.getPaginas() + "\n" +
-               this.fecha + "\n" +
-               this.primicia;
+        return getOrigen() + "\n" + getTitulo() + "\n" + getAutor() + "\n" + getPaginas() + "\n" + fecha + "\n" + primicia;
     }
 }

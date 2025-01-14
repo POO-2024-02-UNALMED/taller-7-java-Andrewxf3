@@ -1,6 +1,4 @@
-package comunicacion;
-
-public class Libro extends Escrito {
+class Libro extends Escrito {
     private String co_autor;
     private String editorial;
     private String edicion;
@@ -38,24 +36,26 @@ public class Libro extends Escrito {
         this.edicion = edicion;
     }
 
-    @Override
-    public String interpretacion() {
-        return this.interpretacion;
+    public String getInterpretacion() {
+        return interpretacion;
+    }
+
+    public void setInterpretacion(String interpretacion) {
+        this.interpretacion = interpretacion;
     }
 
     @Override
     public int palabrasTotales(int palabrasPagina) {
-        return palabrasPagina * this.getPaginas() * 2;
+        return palabrasPagina * getPaginas() * 2;
+    }
+
+    @Override
+    public String interpretacion() {
+        return interpretacion;
     }
 
     @Override
     public String toString() {
-        return this.getOrigen() + "\n" +
-               this.getTitulo() + "\n" +
-               this.getAutor() + "\n" +
-               this.getPaginas() + "\n" +
-               this.co_autor + "\n" +
-               this.editorial + "\n" +
-               this.edicion;
+        return getOrigen() + "\n" + getTitulo() + "\n" + getAutor() + "\n" + getPaginas() + "\n" + co_autor + "\n" + editorial + "\n" + edicion;
     }
 }

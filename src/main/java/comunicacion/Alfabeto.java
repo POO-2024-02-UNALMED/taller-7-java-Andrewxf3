@@ -1,15 +1,10 @@
-package comunicacion;
-
-import java.util.Arrays;
-import java.util.List;
-
-public class Alfabeto extends Pictograma {
+class Alfabeto extends Pictograma {
     private List<String> letras;
     private String interpretacion;
 
-    public Alfabeto(String origen, String[] letras, String interpretacion) {
+    public Alfabeto(String origen, List<String> letras, String interpretacion) {
         super(origen);
-        this.letras = Arrays.asList(letras); // Conversión interna
+        this.letras = letras;
         this.interpretacion = interpretacion;
     }
 
@@ -17,17 +12,25 @@ public class Alfabeto extends Pictograma {
         return letras;
     }
 
-    public void setLetras(String[] letras) {
-        this.letras = Arrays.asList(letras); // Conversión interna
+    public void setLetras(List<String> letras) {
+        this.letras = letras;
+    }
+
+    public String getInterpretacion() {
+        return interpretacion;
+    }
+
+    public void setInterpretacion(String interpretacion) {
+        this.interpretacion = interpretacion;
+    }
+
+    public int cantidadLetras() {
+        return letras.size();
     }
 
     @Override
     public String interpretacion() {
-        return this.interpretacion;
-    }
-
-    public int cantidadLetras() {
-        return this.letras.size();
+        return interpretacion;
     }
 
     @Override
