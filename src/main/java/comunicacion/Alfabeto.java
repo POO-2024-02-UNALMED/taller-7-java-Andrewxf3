@@ -4,10 +4,12 @@ import java.util.List;
 
 public class Alfabeto extends Pictograma {
     private List<String> letras;
+    private String interpretacion;
 
-    public Alfabeto(String origen, String[] letras) {
+    public Alfabeto(String origen, List<String> letras, String interpretacion) {
         super(origen);
-        this.letras = List.of(letras);
+        this.letras = letras;
+        this.interpretacion = interpretacion;
     }
 
     public List<String> getLetras() {
@@ -20,11 +22,11 @@ public class Alfabeto extends Pictograma {
 
     @Override
     public String interpretacion() {
-        return getOrigen();
+        return this.interpretacion;
     }
 
     public int cantidadLetras() {
-        return letras.size();
+        return this.letras.size();
     }
 
     @Override

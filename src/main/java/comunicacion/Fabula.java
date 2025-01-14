@@ -1,34 +1,39 @@
 package comunicacion;
 
-import java.util.List;
+public class Fabula extends Escrito {
+    private String ensenanza;
+    private String interpretacion;
 
-public class Alfabeto extends Pictograma {
-    private List<String> letras;
-
-    public Alfabeto(String origen, String[] letras) {
-        super(origen);
-        this.letras = List.of(letras);
+    public Fabula(String origen, String titulo, String autor, int paginas, String ensenanza, String interpretacion) {
+        super(origen, titulo, autor, paginas);
+        this.ensenanza = ensenanza;
+        this.interpretacion = interpretacion;
     }
 
-    public List<String> getLetras() {
-        return letras;
+    public String getEnsenanza() {
+        return ensenanza;
     }
 
-    public void setLetras(String[] letras) {
-        this.letras = List.of(letras);
+    public void setEnsenanza(String ensenanza) {
+        this.ensenanza = ensenanza;
     }
 
     @Override
     public String interpretacion() {
-        return getOrigen();
+        return this.interpretacion;
     }
 
-    public int cantidadLetras() {
-        return letras.size();
+    @Override
+    public int palabrasTotales(int palabrasPagina) {
+        return palabrasPagina * this.getPaginas();
     }
 
     @Override
     public String toString() {
-        return String.join(", ", letras);
+        return this.getOrigen() + "\n" +
+               this.getTitulo() + "\n" +
+               this.getAutor() + "\n" +
+               this.getPaginas() + "\n" +
+               this.ensenanza;
     }
 }

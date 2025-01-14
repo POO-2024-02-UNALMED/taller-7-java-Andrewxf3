@@ -4,12 +4,14 @@ public class Libro extends Escrito {
     private String co_autor;
     private String editorial;
     private String edicion;
+    private String interpretacion;
 
-    public Libro(String origen, String titulo, String autor, int paginas, String co_autor, String editorial, String edicion) {
+    public Libro(String origen, String titulo, String autor, int paginas, String co_autor, String editorial, String edicion, String interpretacion) {
         super(origen, titulo, autor, paginas);
         this.co_autor = co_autor;
         this.editorial = editorial;
         this.edicion = edicion;
+        this.interpretacion = interpretacion;
     }
 
     public String getCo_autor() {
@@ -38,16 +40,22 @@ public class Libro extends Escrito {
 
     @Override
     public String interpretacion() {
-        return getOrigen();
+        return this.interpretacion;
     }
 
     @Override
     public int palabrasTotales(int palabrasPagina) {
-        return getPaginas() * palabrasPagina;
+        return palabrasPagina * this.getPaginas() * 2;
     }
 
     @Override
     public String toString() {
-        return getTitulo() + "\n" + getAutor() + "\n" + getPaginas() + "\n" + co_autor + "\n" + editorial + "\n" + edicion;
+        return this.getOrigen() + "\n" +
+               this.getTitulo() + "\n" +
+               this.getAutor() + "\n" +
+               this.getPaginas() + "\n" +
+               this.co_autor + "\n" +
+               this.editorial + "\n" +
+               this.edicion;
     }
 }

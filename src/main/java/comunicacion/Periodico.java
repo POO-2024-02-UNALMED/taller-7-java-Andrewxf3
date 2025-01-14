@@ -3,13 +3,13 @@ package comunicacion;
 public class Periodico extends Escrito {
     private String fecha;
     private String primicia;
-    private String seccion;
+    private String interpretacion;
 
-    public Periodico(String origen, String titulo, String autor, int paginas, String fecha, String primicia, String seccion) {
+    public Periodico(String origen, String titulo, String autor, int paginas, String fecha, String primicia, String interpretacion) {
         super(origen, titulo, autor, paginas);
         this.fecha = fecha;
         this.primicia = primicia;
-        this.seccion = seccion;
+        this.interpretacion = interpretacion;
     }
 
     public String getFecha() {
@@ -28,26 +28,23 @@ public class Periodico extends Escrito {
         this.primicia = primicia;
     }
 
-    public String getSeccion() {
-        return seccion;
-    }
-
-    public void setSeccion(String seccion) {
-        this.seccion = seccion;
-    }
-
     @Override
     public String interpretacion() {
-        return getOrigen();
+        return this.interpretacion;
     }
 
     @Override
     public int palabrasTotales(int palabrasPagina) {
-        return getPaginas() * palabrasPagina;
+        return palabrasPagina * this.getPaginas() * 10;
     }
 
     @Override
     public String toString() {
-        return getTitulo() + "\n" + getAutor() + "\n" + getPaginas() + "\n" + fecha + "\n" + primicia + "\n" + seccion;
+        return this.getOrigen() + "\n" +
+               this.getTitulo() + "\n" +
+               this.getAutor() + "\n" +
+               this.getPaginas() + "\n" +
+               this.fecha + "\n" +
+               this.primicia;
     }
 }
