@@ -6,10 +6,10 @@ public class Tesis extends Escrito {
     private String idea;
     private List<String> argumentos;
     private String conclusion;
-    private String referencias;
+    private List<String> referencias;
     private String interpretacion;
 
-    public Tesis(String origen, String titulo, String autor, int paginas, String idea, List<String> argumentos, String conclusion, String referencias, String interpretacion) {
+    public Tesis(String origen, String titulo, String autor, int paginas, String idea, List<String> argumentos, String conclusion, List<String> referencias, String interpretacion) {
         super(origen, titulo, autor, paginas);
         this.idea = idea;
         this.argumentos = argumentos;
@@ -42,11 +42,11 @@ public class Tesis extends Escrito {
         this.conclusion = conclusion;
     }
 
-    public String getReferencias() {
+    public List<String> getReferencias() {
         return referencias;
     }
 
-    public void setReferencias(String referencias) {
+    public void setReferencias(List<String> referencias) {
         this.referencias = referencias;
     }
 
