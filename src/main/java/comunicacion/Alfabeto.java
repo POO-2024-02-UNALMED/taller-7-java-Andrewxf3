@@ -2,7 +2,7 @@ package comunicacion;
 
 import java.util.List;
 
-class Alfabeto extends Pictograma {
+public class Alfabeto extends Pictograma {
     private List<String> letras;
     private String interpretacion;
 

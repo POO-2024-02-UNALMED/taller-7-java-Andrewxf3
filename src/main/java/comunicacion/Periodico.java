@@ -2,7 +2,7 @@ package comunicacion;
 
 import java.util.List;
 
-class Periodico extends Escrito {
+public class Periodico extends Escrito {
     private String fecha;
     private String primicia;
     private String interpretacion;
