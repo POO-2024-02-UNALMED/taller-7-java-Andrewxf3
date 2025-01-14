@@ -1,3 +1,7 @@
+package comunicacion;
+
+import java.util.List;
+
 class Libro extends Escrito {
     private String co_autor;
     private String editorial;
