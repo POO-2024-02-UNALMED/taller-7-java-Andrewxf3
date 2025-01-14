@@ -1,15 +1,13 @@
 package comunicacion;
 
-import java.util.List;
-
 public class Tesis extends Escrito {
     private String idea;
-    private List<String> argumentos;
+    private String[] argumentos;
     private String conclusion;
-    private List<String> referencias;
+    private String[] referencias;
     private String interpretacion;
 
-    public Tesis(String origen, String titulo, String autor, int paginas, String idea, List<String> argumentos, String conclusion, List<String> referencias, String interpretacion) {
+    public Tesis(String origen, String titulo, String autor, int paginas, String idea, String[] argumentos, String conclusion, String[] referencias, String interpretacion) {
         super(origen, titulo, autor, paginas);
         this.idea = idea;
         this.argumentos = argumentos;
@@ -26,11 +24,11 @@ public class Tesis extends Escrito {
         this.idea = idea;
     }
 
-    public List<String> getArgumentos() {
+    public String[] getArgumentos() {
         return argumentos;
     }
 
-    public void setArgumentos(List<String> argumentos) {
+    public void setArgumentos(String[] argumentos) {
         this.argumentos = argumentos;
     }
 
@@ -42,11 +40,11 @@ public class Tesis extends Escrito {
         this.conclusion = conclusion;
     }
 
-    public List<String> getReferencias() {
+    public String[] getReferencias() {
         return referencias;
     }
 
-    public void setReferencias(List<String> referencias) {
+    public void setReferencias(String[] referencias) {
         this.referencias = referencias;
     }
 
@@ -59,7 +57,7 @@ public class Tesis extends Escrito {
     }
 
     public int getCantidadArgumentos() {
-        return argumentos != null ? argumentos.size() : 0;
+        return argumentos != null ? argumentos.length : 0;
     }
 
     @Override
@@ -74,6 +72,6 @@ public class Tesis extends Escrito {
 
     @Override
     public String toString() {
-        return getOrigen() + "\n" + getTitulo() + "\n" + getAutor() + "\n" + getPaginas() + "\n" + idea + "\n" + conclusion + "\n" + referencias;
+        return getOrigen() + "\n" + getTitulo() + "\n" + getAutor() + "\n" + getPaginas() + "\n" + idea + "\n" + conclusion + "\n" + String.join(", ", referencias);
     }
 }
