@@ -1,4 +1,4 @@
-﻿package comunicacion;
+﻿﻿package comunicacion;
 
 
 public class Alfabeto extends Pictograma {
@@ -33,5 +33,3 @@ public class Alfabeto extends Pictograma {
         return String.join(", ", letras);
     }
 }
-
-

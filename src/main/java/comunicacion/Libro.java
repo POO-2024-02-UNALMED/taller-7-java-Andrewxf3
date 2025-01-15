@@ -1,5 +1,6 @@
 package comunicacion;
 
+
 public class Libro extends Escrito {
     private String co_autor;
     private String editorial;
@@ -73,5 +74,4 @@ public class Libro extends Escrito {
         return getOrigen() + "\n" + getTitulo() + "\n" + getAutor() + "\n" + getPaginas() + "\n" + co_autor + "\n" + editorial + "\n" + edicion;
     }
 }
-
 
